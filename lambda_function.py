@@ -27,8 +27,8 @@ def save_to_s3(bucket_name, filename, data):
 
 def lambda_handler(event, context):
     # Set up parameters
-    start_date = datetime.utcnow().date() - timedelta(days=1)  # Yesterday's date
-    end_date = datetime.utcnow().date() - timedelta(days=1)    # Yesterday's date
+    start_date = datetime.utcnow().date() - timedelta(days=2)  
+    end_date = datetime.utcnow().date() - timedelta(days=2)    
     bucket_name = 'csvcollectorrahesh'
 
     # Generate mock data
