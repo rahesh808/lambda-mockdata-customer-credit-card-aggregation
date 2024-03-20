@@ -36,7 +36,7 @@ def lambda_handler(event, context):
     csv_data = ''.join([','.join(map(str, row)) + '\n' for row in transactions])
 
     # Save data to CSV file and upload to S3
-    filename = f"date={start_date.strftime('%Y-%m-%d')}.csv"
+    filename = f"customer_debit_card_{start_date.strftime('%Y_%m_%d')}.csv"
     save_to_s3(bucket_name, filename, csv_data)
 
     return {
